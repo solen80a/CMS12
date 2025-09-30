@@ -1,4 +1,6 @@
-# Empty CMS template
+# CMS 12 Project
+
+Started this project to learn Optimizly (EPiServer).
 
 ## How to run
 
