@@ -1,0 +1,26 @@
+@using Cms.Models.Pages
+@model StandardPage
+@{
+  Layout = "../Base/Base.cshtml";
+}
+
+<section>
+
+  @if (!string.IsNullOrEmpty(Model.Subheading))
+  {
+    <h2>@Model.Subheading</h2>
+  }
+
+  @if (Model.MainBody != null && !Model.MainBody.IsEmpty)
+  {
+    <div>
+      @Html.Raw(Model.MainBody)
+    </div>
+  }
+
+  @if (!string.IsNullOrEmpty(Model.ImageUrl))
+  {        
+            <img src="@Model.ImageUrl" alt="Image for @Model.Subheading" class="rounded-lg px-4 py-4 transition-transform duration-150 ease-out hover:scale-105 hover:ease-in" />
+         
+  }
+</section>
