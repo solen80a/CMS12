@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EPiServer.Core;
+using EPiServer.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Cms.Models.Pages
 {
@@ -7,8 +9,8 @@ namespace Cms.Models.Pages
         DisplayName = "Articles Page",
         Description = "A page containing multiple article cards"
     )]
-    public class ArticlesPage
-    {
-        public List<ArticleCard> Cards { get; set; } = new();
+    public class ArticlesPage : PageData
+    {        
+        public virtual ContentArea? Cards { get; set; }
     }
 }

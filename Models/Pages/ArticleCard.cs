@@ -2,8 +2,8 @@
 {
     public class ArticleCard
     {
-        public string? Subheading { get; set; }
-        public string? MainBody { get; set; }
-        public string? ImageUrl { get; set; }
+        public virtual string? Subheading { get; set; }
+        public virtual string? MainBody { get; set; }
+        public virtual string? ImageUrl { get; set; }
     }
 }
