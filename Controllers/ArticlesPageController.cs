@@ -1,27 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Cms.Models.Pages;
-using EPiServer.Core;
-using System.Collections.Generic;
+using EPiServer.Web.Mvc;
 
 namespace Cms.Controllers
 {
-    public class ArticlesPageController : Controller
+    public class ArticlesPageController : PageController<ArticlesPage>
     {
-        public ContentArea GetArticleCards()
+        public ActionResult Index(ArticlesPage currentPage)
         {
-            var contentArea = new ContentArea();         
-
-            return contentArea;
-        }
-
-        public IActionResult Index(ContentArea articleCardArea)
-        {
-            var articlesPage = new ArticlesPage
-            {
-                Cards = articleCardArea
-            };
-
-            return View(articlesPage);
+            return View(currentPage);
         }
     }
 }

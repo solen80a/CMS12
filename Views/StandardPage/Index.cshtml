@@ -5,22 +5,29 @@
 }
 
 <section>
+    <div class="flex flex-col justify-center px-4 py-4">
+        @if (!string.IsNullOrEmpty(Model.Subheading))
+        {
+            <h2 class="px-4 py-4 font-bold">@Model.Subheading</h2>
+        }
 
-  @if (!string.IsNullOrEmpty(Model.Subheading))
-  {
-    <h2>@Model.Subheading</h2>
-  }
+        @if (Model.MainBody != null && !Model.MainBody.IsEmpty)
+        {
+            <div class="px-4 py-8">
+                @Html.Raw(Model.MainBody)
+            </div>
+        }
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Image for @Model.Subheading" class="w-full object-cover transition-transform duration-150 ease-out hover:scale-105 hover:ease-in" />
 
-  @if (Model.MainBody != null && !Model.MainBody.IsEmpty)
-  {
-    <div>
-      @Html.Raw(Model.MainBody)
+            }
+        </div>
+        
+            
+        
     </div>
-  }
 
-  @if (!string.IsNullOrEmpty(Model.ImageUrl))
-  {        
-            <img src="@Model.ImageUrl" alt="Image for @Model.Subheading" class="rounded-lg px-4 py-4 transition-transform duration-150 ease-out hover:scale-105 hover:ease-in" />
-         
-  }
+  
 </section>
