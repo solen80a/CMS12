@@ -7,9 +7,11 @@
     <title>CMS</title>
     <link rel="stylesheet" href="~/Assets/CSS/output.css" />
     @RenderSection("Styles", required: false)
+    <script src="~/src/components/LinksClickHandler.js"></script>
+    <script src="~/src/components/CardModal.js"></script>
 </head>
 
-<body class="bg-white text-black font-sans">
+<body class="bg-grey-100 text-gray-700 font-sans">
     <header class="relative flex items-center justify-center h-[400px]">
         <div class="grid w-full px-4 place-items-stretch">
             <div class="container mx-auto px-4 text-center">
@@ -20,16 +22,40 @@
             </div>
            
         </div>
+    
         
     </header>
+    <nav class="flex justify-center space-x-4 px-3 py-2">
+        <a href="/" class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900">
+            Home
+        </a>
+        <a href="/en/cats" class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900">
+            Cats
+        </a>
+        <a href="/en/about" class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900">
+            About
+        </a>
+        <a href="/en/contact" class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900">
+            Contact
+        </a>
+    </nav>
     <div class="max-w-4xl mx-auto px-4 py-8">
         @RenderBody()
         @RenderSection("Scripts", required: false)
-    </div>
-    <footer class="flex justify-center bg-gray-100 text-gray-600 text-center py-4 mt-8 shadow-inner">
+    </div>   
+    
+    <footer class="flex justify-center space-x-4 bg-gray-100 text-gray-600 text-center py-4 mt-8 shadow-inner">
+        <button class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900"
+                onclick="linksClickHandler('cats')">
+            Cats
+        </button>
         
-        <div class="px-4">About</div>
-        <div class="px-4">Contact</div>
+        <button class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900"
+                onclick="linksClickHandler('about')"
+                >About</button>
+        <button class="font-bold rounded-lg px-3 py-2 text-gray-700 hover:bg-rose-100 hover:text-gray-900" 
+                onclick="linksClickHandler('contact')"                
+                >Contact </button>
     </footer>
 </body>
 
